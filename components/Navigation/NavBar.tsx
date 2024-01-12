@@ -44,7 +44,7 @@ function LeftDesktopNavLinks() {
                         <Link href={menuLink.href} legacyBehavior passHref>
                             <NavigationMenuLink className={cn({
                                 'text-primary/90': menuLink.href === currentPath,
-                                'text-primary-foreground': menuLink.href !== currentPath,
+                                'text-secondary-foreground': menuLink.href !== currentPath,
                                 'transition-colors': true,
                             }) + navigationMenuTriggerStyle() }
                             >
@@ -89,7 +89,7 @@ function RightActionLinks() {
 }
 function JozenLogo() {
     return (
-        <Link href="/public" className="mr-6 flex items-center space-x-2">
+        <Link href="/public" className="mr-6 flex items-center space-x-2 text-secondary-foreground">
             <Image src="/logo.png" alt="Jozen Logo" width={40} height={40} className="h-auto w-auto" priority/>
             <span className="font-bold sm:inline-block">
                 <span className="hidden md:inline">The</span> Jozen
