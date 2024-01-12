@@ -33,7 +33,7 @@ export default function MobileNavigation({sheetTriggerStyle}: MobileNavigationPr
                     </SheetTitle>
 
 
-                    <div className="h-full w-full rounded-[inherit] my-4">
+                    <div className="h-full w-full rounded-[inherit] py-4">
                         <div className="text-secondary-foreground text-lg text-left ml-10">
                             <div className="flex flex-col space-y-4" onClick={closeSheet}>
                                 {menuLinks.map((menuLink) => (
