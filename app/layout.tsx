@@ -4,6 +4,7 @@ import './globals.css'
 import React from "react"
 import {cn} from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
+import NavBar from "@/components/Navigation/NavBar";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
       >
+          <NavBar />
           <main className="md:container md:mx-auto p-5">
               {children}
           </main>
