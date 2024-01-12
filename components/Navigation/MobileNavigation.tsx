@@ -70,7 +70,7 @@ function MobileMenuIcon() {
 
 export function JozenQuote() {
     return (
-        <div className="flex flex-col space-y-1 text-sm text-center">
+        <div className="flex flex-col space-y-1 text-sm">
             <BlockQuote>
                 You are capable of multitudes- <br/> more than you can imagine.
             </BlockQuote>
