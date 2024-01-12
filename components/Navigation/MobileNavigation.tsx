@@ -1,19 +1,25 @@
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
 import {JozenLogo} from "@/components/Navigation/NavBar"
 import {useState} from "react";
+import {menuLinks} from "@/components/Navigation/NavigationLinks";
+import Link from "next/link";
+import {BlockQuote} from "@/components/ui/Text/BlockQuote";
 
 interface MobileNavigationProps {
     sheetTriggerStyle: string,
 }
 export default function MobileNavigation({sheetTriggerStyle}: MobileNavigationProps) {
     const [open, setOpen] = useState(false)
+
+    const closeSheet = () => {
+        setOpen(false)
+    }
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -22,13 +28,31 @@ export default function MobileNavigation({sheetTriggerStyle}: MobileNavigationPr
             </SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader className="mt-4">
-                    <SheetTitle onClick={() => setOpen(false)}>
-                        <JozenLogo />
+                    <SheetTitle onClick={closeSheet}>
+                        <JozenLogo/>
                     </SheetTitle>
-                    <SheetDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </SheetDescription>
+
+
+                    <div className="h-full w-full rounded-[inherit] my-4">
+                        <div className="text-secondary-foreground text-lg text-left ml-10">
+                            <div className="flex flex-col space-y-4" onClick={closeSheet}>
+                                {menuLinks.map((menuLink) => (
+                                    <Link href={menuLink.href} key={menuLink.id}>
+                                        {menuLink.title}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-12">
+                        <div className="flex flex-col space-y-1 text-sm">
+                            <BlockQuote>
+                                What would life be if we had no courage to attempt anything?
+                            </BlockQuote>
+                            <span>&#45; Vincent van Gogh</span>
+                        </div>
+                    </div>
                 </SheetHeader>
             </SheetContent>
         </Sheet>

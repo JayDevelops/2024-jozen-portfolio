@@ -1,7 +1,7 @@
 export default function PhotosPage() {
     return (
         <div>
-            Hello World...
+            Photos Page...
         </div>
     )
 }

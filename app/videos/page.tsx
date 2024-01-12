@@ -1,7 +1,7 @@
 export default function VideoPage() {
     return (
         <div>
-            Hello World...
+            Videos Page...
         </div>
     )
 }
