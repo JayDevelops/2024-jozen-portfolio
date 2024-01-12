@@ -46,12 +46,7 @@ export default function MobileNavigation({sheetTriggerStyle}: MobileNavigationPr
                     </div>
 
                     <div className="mt-12">
-                        <div className="flex flex-col space-y-1 text-sm">
-                            <BlockQuote>
-                                What would life be if we had no courage to attempt anything?
-                            </BlockQuote>
-                            <span>&#45; Vincent van Gogh</span>
-                        </div>
+                        <JozenQuote />
                     </div>
                 </SheetHeader>
             </SheetContent>
@@ -70,5 +65,16 @@ function MobileMenuIcon() {
             <path d="M3 19H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                   strokeLinejoin="round"></path>
         </svg>
+    )
+}
+
+export function JozenQuote() {
+    return (
+        <div className="flex flex-col space-y-1 text-sm text-center">
+            <BlockQuote>
+                You are capable of multitudes- <br/> more than you can imagine.
+            </BlockQuote>
+            <span>&#45; Jozen </span>
+        </div>
     )
 }

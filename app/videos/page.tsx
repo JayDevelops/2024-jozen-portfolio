@@ -9,6 +9,6 @@ export default function VideoPage() {
 }
 
 export const metadata: Metadata = {
-    title: "Photos",
+    title: 'Videos',
     description: 'Jozen\'s videos.',
 }
