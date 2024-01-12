@@ -29,7 +29,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
       >
-      {children}
+          <main className="md:container md:mx-auto p-5">
+              {children}
+          </main>
       </ThemeProvider>
       </body>
     </html>
