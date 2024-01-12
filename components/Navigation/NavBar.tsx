@@ -12,15 +12,18 @@ import {cn} from "@/lib/utils"
 import {usePathname} from "next/navigation"
 import React from "react";
 import {ModeToggle} from "@/components/toggle-mode-button"
+import MobileNavigation from "@/components/Navigation/MobileNavigation";
 
 export default function NavBar() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center">
-                <JozenLogo/>
+                <MobileNavigation sheetTriggerStyle="block md:hidden pr-3"/>
+
                 {/* RIGHT SIDE OF DESKTOP NAVIGATION */}
                 <div className="mr-4 hidden md:flex">
-                    <LeftDesktopNavLinks/>
+                    <JozenLogo/>
+                    <LeftDesktopNavLinks />
                 </div>
 
                 {/* LEFT SIDE OF NAVIGATION BAR, BOTH MOBILE AND DESKTOP */}
@@ -87,12 +90,13 @@ function RightActionLinks() {
         </NavigationMenu>
     )
 }
-function JozenLogo() {
+
+export function JozenLogo() {
     return (
-        <Link href="/public" className="mr-6 flex items-center space-x-2 text-secondary-foreground">
-            <Image src="/logo.png" alt="Jozen Logo" width={40} height={40} className="h-auto w-auto" priority/>
+        <Link href="/" className="mr-6 flex items-center space-x-2 text-secondary-foreground">
+            <Image src="/logo.png" alt="Jozen Logo" width={32} height={32} className="h-auto w-auto" priority/>
             <span className="font-bold sm:inline-block">
-                <span className="hidden md:inline">The</span> Jozen
+                The Jozen
             </span>
         </Link>
     )
